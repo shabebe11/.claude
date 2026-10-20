@@ -1,0 +1,89 @@
+# ==========================================
+# Claude Configuration Repository .gitignore
+# ==========================================
+
+# 1. Ignore everything by default (Allowlist approach)
+*
+.*
+
+# 2. Allow Git configuration, README, and templates
+!.gitignore
+!README.md
+!CLAUDE.md
+!settings.example.json
+
+# 3. Allow Custom Agents
+!agents/
+!agents/**
+agents/**/.DS_Store
+
+# 4. Allow Custom Commands
+!commands/
+!commands/**
+commands/**/.DS_Store
+
+# 5. Allow Custom Skills (excluding trash, caches, synced marketplace bundles)
+!skills/
+!skills/**
+skills/.trash/
+skills/.trash/**
+skills/synced/
+skills/synced/**
+skills/**/.DS_Store
+skills/**/.git/
+skills/**/.git/**
+
+# ==========================================
+# EXPLICIT HIGH-PRIORITY BLACKLIST (SAFETY GUARD)
+# ==========================================
+# Local settings & plugin state (contain machine paths & local environment)
+settings.json
+plugins/
+plugins/**
+
+# Never track credentials, keys, or tokens
+*.key
+*.token
+*.pem
+*.secret
+daemon/
+daemon/**
+
+# Never track history, session transcripts, or caches
+*history*
+history.jsonl
+file-history/
+file-history/**
+sessions/
+sessions/**
+session-env/
+session-env/**
+cache/
+cache/**
+paste-cache/
+paste-cache/**
+backups/
+backups/**
+debug/
+debug/**
+downloads/
+downloads/**
+ide/
+ide/**
+jobs/
+jobs/**
+projects/
+projects/**
+seed-admin/
+seed-admin/**
+shell-snapshots/
+shell-snapshots/**
+state/
+state/**
+
+# System and temporary files
+.DS_Store
+*.tmp
+*.log
+.last*
+.update*

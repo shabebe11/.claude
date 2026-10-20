@@ -1,0 +1,38 @@
+{
+  "model": "sonnet",
+  "effortLevel": "xhigh",
+  "theme": "dark",
+  "agentPushNotifEnabled": true,
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) && [ \"$root\" != \"$HOME\" ] && cd \"$root\" && \"$HOME/.local/bin/graphify\" update . >/dev/null 2>&1 || true",
+            "timeout": 300,
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5": {
+      "effortLevel": "xhigh"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "high"
+    }
+  }
+}
